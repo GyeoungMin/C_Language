@@ -10,6 +10,7 @@ int Pointer()
 	// 32bit ==> 4byte
 	// 64bit ==> 8byte
 
+	int a, b;
 	int n = 567;	// n의 크기는 4바이트
 	char c = 'a';	// c의 크기는 1바이트
 	double d = 5.7; // d의 크기는 8바이트
@@ -29,7 +30,6 @@ int Pointer()
 	// int *ptr = NULL; //권장사항
 
 	// & = 주소 연산자
-	int a;
 	a = 2;
 
 	printf("%p \n", &a);
@@ -40,17 +40,28 @@ int Pointer()
 	printf("포인터 p에 들어있는 값 : %p \n", p);
 	printf("변수 a의 주소 : %p \n", &a);*/
 
-	int *p;
-	int *pj;
-	int j;
+	int *pa;
+	int *pb;
 
-	pj = &j;
-	p = &a;
-	*p = 3;
+	pb = &b;
+	pa = &a;
+	*pa = 3;
 
 
 	printf("a의 값 : %d \n", a);
-	printf("*p의 값 : %d \n", *p);
-	printf("pc의 값 : %d \n", *pj);
+	printf("*pa의 값 : %d \n", *pa);
+	printf("*pb의 값 : %d \n", *pb);
+	
+	// 포인터도 변수이다.
+
+	//int a, b;
+	int *ptr;	// int 타입의 포인터 변수 선언
+
+	ptr = &a;	// 포인터에 a의 주소를 대입
+	*ptr = 2;	// 포인터가 가리키는 곳에 2(값)을 대입
+	ptr	= &b;	// 포인터가 가리키는 곳을 a -> b로 변경
+	*ptr = 3;	// 이번에 가리키는 곳에 3(값)을 대입
+
+	printf("a의 값 : %d , b의 값 : %d \n", a, b);
 
 }
